@@ -7,7 +7,7 @@ export default function Footer() {
 
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
           <div>
             <div className="font-serif text-2xl font-light mb-4">
@@ -27,73 +27,10 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link
-                  href="/shop"
-                  className="text-foreground/60 hover:text-accent transition-colors font-light text-sm"
-                >
-                  Shop Collections
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
+                  href="#brand"
                   className="text-foreground/60 hover:text-accent transition-colors font-light text-sm"
                 >
                   About Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-foreground/60 hover:text-accent transition-colors font-light text-sm"
-                >
-                  Care Guide
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-foreground/60 hover:text-accent transition-colors font-light text-sm"
-                >
-                  Testimonials
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h3 className="font-serif text-lg font-light mb-4">Services</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link
-                  href="#"
-                  className="text-foreground/60 hover:text-accent transition-colors font-light text-sm"
-                >
-                  Custom Designs
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-foreground/60 hover:text-accent transition-colors font-light text-sm"
-                >
-                  OEM & Wholesale
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-foreground/60 hover:text-accent transition-colors font-light text-sm"
-                >
-                  Interior Design
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-foreground/60 hover:text-accent transition-colors font-light text-sm"
-                >
-                  Installation
                 </Link>
               </li>
             </ul>
@@ -105,12 +42,20 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <Phone className="w-4 h-4 mt-1 text-accent flex-shrink-0" />
-                <a
-                  href="tel:+918104715725"
-                  className="text-foreground/60 hover:text-accent transition-colors font-light text-sm"
-                >
-                  +91 8104715725
-                </a>
+                <div className="space-y-1">
+                  <a
+                    href="tel:+918104715725"
+                    className="block text-foreground/60 hover:text-accent transition-colors font-light text-sm"
+                  >
+                    +91 8104715725
+                  </a>
+                  <a
+                    href="tel:+917715004948"
+                    className="block text-foreground/60 hover:text-accent transition-colors font-light text-sm"
+                  >
+                    +91 77150 04948
+                  </a>
+                </div>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="w-4 h-4 mt-1 text-accent flex-shrink-0" />
@@ -167,13 +112,13 @@ export default function Footer() {
             {/* Legal */}
             <div className="flex gap-6 text-sm">
               <Link
-                href="#"
+                href="/privacy-policy"
                 className="text-foreground/60 hover:text-accent transition-colors font-light"
               >
                 Privacy
               </Link>
               <Link
-                href="#"
+                href="/terms-and-conditions"
                 className="text-foreground/60 hover:text-accent transition-colors font-light"
               >
                 Terms

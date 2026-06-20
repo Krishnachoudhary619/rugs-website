@@ -1,15 +1,10 @@
-import { Globe, Zap, Users, PackageOpen, Leaf, Shield, CheckCircle, Truck } from 'lucide-react'
+import { Globe, Users, Shield, CheckCircle } from 'lucide-react'
 
 const reasons = [
   {
     icon: CheckCircle,
     title: 'Premium Quality Products',
     description: 'Every rug is carefully sourced and inspected to meet international quality expectations.',
-  },
-  {
-    icon: Zap,
-    title: 'Competitive Export Pricing',
-    description: 'Direct sourcing and strong supplier relationships help us provide exceptional value.',
   },
   {
     icon: Users,
@@ -22,34 +17,9 @@ const reasons = [
     description: 'Reliable export solutions for buyers across global markets.',
   },
   {
-    icon: Leaf,
-    title: 'Trusted Manufacturing Network',
-    description: 'Strong partnerships with experienced artisans and manufacturers.',
-  },
-  {
     icon: Shield,
     title: 'Strict Quality Inspection',
     description: 'Every order undergoes detailed quality checks before dispatch.',
-  },
-  {
-    icon: PackageOpen,
-    title: 'Professional Packaging',
-    description: 'Export-grade packaging ensuring safe delivery.',
-  },
-  {
-    icon: Truck,
-    title: 'On-Time Delivery',
-    description: 'Efficient logistics and dependable timelines.',
-  },
-  {
-    icon: Users,
-    title: 'Buyer-Centric Service',
-    description: 'Dedicated support from enquiry to delivery.',
-  },
-  {
-    icon: CheckCircle,
-    title: 'Long-Term Partnerships',
-    description: 'Focused on building sustainable business relationships worldwide.',
   },
 ]
 
@@ -68,7 +38,7 @@ export default function WhyChooseUs() {
         </div>
 
         {/* Reasons Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {reasons.map((reason, index) => {
             const Icon = reason.icon
             return (
