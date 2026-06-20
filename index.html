@@ -1,0 +1,1560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zafran House — Handcrafted Rugs from India</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:     #1C1B2E;
+      --ivory:   #F7F2EA;
+      --gold:    #C9A84C;
+      --rose:    #C4836A;
+      --stone:   #8A7E72;
+      --cream:   #EDE6D8;
+      --white:   #FDFAF5;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--white);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── UTILITIES ─── */
+    .display    { font-family: 'Cormorant Garamond', serif; }
+    .gold       { color: var(--gold); }
+    .rose-text  { color: var(--rose); }
+    .stone-text { color: var(--stone); }
+
+    /* ─── BORDER MOTIF (signature element) ─── */
+    .border-motif {
+      display: inline-block;
+      width: 44px;
+      height: 2px;
+      background: var(--gold);
+      vertical-align: middle;
+    }
+    .border-motif::before,
+    .border-motif::after {
+      content: '';
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      border: 1.5px solid var(--gold);
+      border-radius: 50%;
+      vertical-align: middle;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 60px;
+      background: rgba(253,250,245,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+      transition: padding 0.3s;
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--gold); }
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 12.5px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--stone);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--ink); }
+
+    .nav-cta {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      padding: 9px 22px;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-cta:hover { background: var(--gold); color: var(--white); }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 80px;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 60px 80px 60px;
+      background: var(--white);
+    }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+    }
+
+    .hero-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(52px, 6vw, 82px);
+      font-weight: 300;
+      line-height: 1.08;
+      color: var(--ink);
+      margin-bottom: 32px;
+    }
+    .hero-heading em {
+      font-style: italic;
+      color: var(--rose);
+    }
+
+    .hero-sub {
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--stone);
+      max-width: 400px;
+      margin-bottom: 48px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .btn-primary {
+      background: var(--ink);
+      color: var(--ivory);
+      padding: 15px 38px;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: #2e2c44; }
+
+    .btn-ghost {
+      font-size: 12.5px;
+      letter-spacing: 0.08em;
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid var(--ink);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .btn-ghost:hover { color: var(--rose); border-color: var(--rose); }
+
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+      background: var(--cream);
+    }
+
+    .hero-img-wrap {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .hero-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Hero image carousel */
+    .hero-carousel {
+      width: 100%;
+      height: 100%;
+      min-height: 100vh;
+      position: relative;
+      background: var(--cream);
+    }
+
+    .hero-carousel-track {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+      pointer-events: none;
+    }
+
+    .hero-slide.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .hero-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-carousel-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(28,27,46,0.55) 0%,
+        rgba(28,27,46,0.08) 35%,
+        transparent 60%
+      );
+      pointer-events: none;
+    }
+
+    .hero-caption {
+      position: absolute;
+      bottom: 36px;
+      left: 40px;
+      right: 40px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 13px;
+      font-style: italic;
+      color: var(--ivory);
+      letter-spacing: 0.08em;
+      z-index: 2;
+    }
+
+    .hero-carousel-nav {
+      position: absolute;
+      bottom: 36px;
+      right: 40px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      z-index: 3;
+    }
+
+    .hero-carousel-btn {
+      width: 40px;
+      height: 40px;
+      border: 1px solid rgba(253,250,245,0.45);
+      background: rgba(28,27,46,0.25);
+      color: var(--ivory);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      line-height: 1;
+      transition: background 0.2s, border-color 0.2s;
+      backdrop-filter: blur(6px);
+    }
+
+    .hero-carousel-btn:hover {
+      background: rgba(28,27,46,0.5);
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .hero-carousel-dots {
+      display: flex;
+      gap: 8px;
+    }
+
+    .hero-carousel-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      border: 1px solid rgba(253,250,245,0.55);
+      background: transparent;
+      cursor: pointer;
+      padding: 0;
+      transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    }
+
+    .hero-carousel-dot.active {
+      background: var(--gold);
+      border-color: var(--gold);
+      transform: scale(1.15);
+    }
+
+    /* ─── STATS BAR ─── */
+    .stats-bar {
+      background: var(--ink);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .stat-item {
+      padding: 40px 48px;
+      border-right: 1px solid rgba(255,255,255,0.07);
+    }
+    .stat-item:last-child { border-right: none; }
+
+    .stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 44px;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.38);
+    }
+
+    /* ─── SECTION SHARED ─── */
+    section { padding: 120px 60px; }
+
+    .section-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+
+    .section-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 4vw, 56px);
+      font-weight: 300;
+      line-height: 1.12;
+      color: var(--ink);
+      margin-bottom: 24px;
+    }
+
+    .section-body {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--stone);
+    }
+
+    /* ─── ABOUT ─── */
+    .about {
+      display: grid;
+      grid-template-columns: 5fr 7fr;
+      gap: 80px;
+      align-items: center;
+      background: var(--white);
+    }
+
+    .about-left { position: relative; }
+
+    .about-img-box {
+      background: var(--cream);
+      aspect-ratio: 4/5;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-img-box img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+
+    .about-img-pattern {
+      width: 100%; height: 100%;
+      background:
+        repeating-linear-gradient(
+          0deg, rgba(201,168,76,0.07) 0px, rgba(201,168,76,0.07) 1px,
+          transparent 1px, transparent 40px
+        ),
+        repeating-linear-gradient(
+          90deg, rgba(196,131,106,0.07) 0px, rgba(196,131,106,0.07) 1px,
+          transparent 1px, transparent 40px
+        ),
+        var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .accent-block {
+      position: absolute;
+      bottom: -24px;
+      right: -24px;
+      width: 120px;
+      height: 120px;
+      background: var(--gold);
+      opacity: 0.15;
+    }
+
+    .about-divider {
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+      margin: 28px 0;
+    }
+
+    /* ─── COLLECTIONS ─── */
+    .collections {
+      background: var(--cream);
+      padding: 120px 60px;
+    }
+
+    .collections-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 64px;
+    }
+
+    .collections-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .col-card {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .col-card-img {
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      background: var(--ivory);
+    }
+
+    .col-card-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    .col-card:hover .col-card-img img { transform: scale(1.04); }
+
+    /* Pattern fallback for collection cards */
+    .col-pattern {
+      width: 100%; height: 100%;
+      min-height: 380px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      padding: 28px;
+      transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    .col-card:hover .col-pattern { transform: scale(1.04); }
+
+    .col-pattern-1 {
+      background:
+        repeating-linear-gradient(60deg, rgba(28,27,46,0.08) 0, rgba(28,27,46,0.08) 1px, transparent 1px, transparent 16px),
+        #D4C5B0;
+    }
+    .col-pattern-2 {
+      background:
+        repeating-linear-gradient(30deg, rgba(196,131,106,0.12) 0, rgba(196,131,106,0.12) 1px, transparent 1px, transparent 22px),
+        #B8A898;
+    }
+    .col-pattern-3 {
+      background:
+        repeating-linear-gradient(90deg, rgba(201,168,76,0.1) 0, rgba(201,168,76,0.1) 1px, transparent 1px, transparent 18px),
+        #C9BBA8;
+    }
+
+    .col-card-info {
+      background: var(--white);
+      padding: 22px 24px;
+    }
+
+    .col-card-origin {
+      font-size: 10.5px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+
+    .col-card-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+
+    .col-card-desc {
+      font-size: 13px;
+      color: var(--stone);
+      line-height: 1.6;
+    }
+
+    /* ─── PROCESS ─── */
+    .process {
+      background: var(--white);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      align-items: start;
+    }
+
+    .process-steps {
+      margin-top: 56px;
+    }
+
+    .process-step {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 20px;
+      padding: 28px 0;
+      border-top: 1px solid var(--cream);
+    }
+    .process-step:last-child { border-bottom: 1px solid var(--cream); }
+
+    .step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 13px;
+      font-style: italic;
+      color: var(--gold);
+      padding-top: 4px;
+    }
+
+    .step-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+
+    .step-body {
+      font-size: 14px;
+      color: var(--stone);
+      line-height: 1.75;
+    }
+
+    .process-right {
+      position: sticky;
+      top: 120px;
+    }
+
+    .process-visual {
+      background: var(--cream);
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .process-quote {
+      background: var(--ink);
+      padding: 44px 44px;
+      margin-top: 2px;
+    }
+
+    .pq-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--ivory);
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .pq-author {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* ─── WHY US ─── */
+    .why {
+      background: var(--ink);
+      color: var(--ivory);
+      text-align: center;
+      padding: 120px 60px;
+    }
+
+    .why .section-heading { color: var(--ivory); }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      margin-top: 72px;
+    }
+
+    .why-card {
+      background: rgba(255,255,255,0.04);
+      padding: 44px 32px;
+      text-align: left;
+      border-top: 2px solid transparent;
+      transition: border-color 0.3s, background 0.3s;
+    }
+    .why-card:hover {
+      border-color: var(--gold);
+      background: rgba(255,255,255,0.07);
+    }
+
+    .why-icon {
+      width: 36px;
+      height: 36px;
+      margin-bottom: 24px;
+      opacity: 0.7;
+    }
+
+    .why-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--ivory);
+      margin-bottom: 12px;
+    }
+
+    .why-body {
+      font-size: 13.5px;
+      line-height: 1.75;
+      color: rgba(247,242,234,0.5);
+    }
+
+    /* ─── TESTIMONIALS ─── */
+    .testimonials {
+      background: var(--cream);
+      padding: 120px 60px;
+    }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 64px;
+    }
+
+    .testi-card {
+      background: var(--white);
+      padding: 40px 36px;
+      border-left: 3px solid var(--gold);
+    }
+
+    .testi-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 19px;
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.6;
+      color: var(--ink);
+      margin-bottom: 28px;
+    }
+
+    .testi-name {
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--stone);
+    }
+
+    .testi-loc {
+      font-size: 12px;
+      color: var(--gold);
+      margin-top: 4px;
+    }
+
+    /* ─── CONTACT ─── */
+    .contact {
+      background: var(--white);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    .contact-left {
+      padding: 120px 60px;
+    }
+
+    .contact-details {
+      margin-top: 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .contact-item-label {
+      font-size: 10.5px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+
+    .contact-item-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      color: var(--ink);
+    }
+
+    .contact-right {
+      background: var(--ink);
+      padding: 120px 60px;
+    }
+
+    .contact-right .section-heading { color: var(--ivory); }
+
+    .contact-form {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-group label {
+      font-size: 10.5px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(247,242,234,0.45);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--ivory);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      padding: 14px 16px;
+      outline: none;
+      transition: border-color 0.2s;
+      -webkit-appearance: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--gold); }
+
+    .form-group select option { background: var(--ink); }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+
+    .btn-submit {
+      background: var(--gold);
+      color: var(--ink);
+      border: none;
+      padding: 16px 40px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11.5px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background 0.2s;
+      align-self: flex-start;
+      margin-top: 8px;
+    }
+    .btn-submit:hover { background: #d9b85c; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #14131F;
+      padding: 60px 60px 40px;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 60px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .footer-brand-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-weight: 500;
+      color: var(--ivory);
+      margin-bottom: 16px;
+    }
+    .footer-brand-name span { color: var(--gold); }
+
+    .footer-brand-desc {
+      font-size: 13px;
+      color: rgba(255,255,255,0.3);
+      line-height: 1.75;
+      max-width: 240px;
+    }
+
+    .footer-col-title {
+      font-size: 10.5px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--ivory); }
+
+    .footer-bottom {
+      padding-top: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: rgba(255,255,255,0.2);
+    }
+
+    .footer-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 13px;
+      font-style: italic;
+      color: rgba(255,255,255,0.2);
+    }
+
+    /* ─── MOBILE ─── */
+    @media (max-width: 900px) {
+      nav { padding: 18px 24px; }
+      .nav-links, .nav-cta { display: none; }
+
+      .hero { grid-template-columns: 1fr; }
+      .hero-left { padding: 60px 24px 40px; }
+      .hero-right { min-height: 340px; }
+      .hero-carousel { min-height: 340px; }
+      .hero-caption { left: 24px; right: 24px; bottom: 72px; }
+      .hero-carousel-nav { right: 24px; bottom: 24px; left: 24px; justify-content: center; }
+
+      .stats-bar { grid-template-columns: 1fr 1fr; }
+      .stat-item { border-bottom: 1px solid rgba(255,255,255,0.07); }
+
+      section { padding: 72px 24px; }
+
+      .about { grid-template-columns: 1fr; gap: 40px; }
+      .collections-header { flex-direction: column; gap: 16px; align-items: flex-start; }
+      .collections-grid { grid-template-columns: 1fr; }
+      .collections { padding: 72px 24px; }
+      .process { grid-template-columns: 1fr; gap: 40px; }
+      .process-right { position: static; }
+      .why-grid { grid-template-columns: 1fr 1fr; }
+      .testi-grid { grid-template-columns: 1fr; }
+      .contact { grid-template-columns: 1fr; }
+      .contact-left, .contact-right { padding: 72px 24px; }
+      .form-row { grid-template-columns: 1fr; }
+      footer { padding: 48px 24px 28px; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 36px; }
+      .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+    }
+  
+/* WhatsApp Floating Button */
+.whatsapp-float{
+position:fixed;
+bottom:25px;
+right:25px;
+width:60px;
+height:60px;
+border-radius:50%;
+background:#25D366;
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:28px;
+text-decoration:none;
+z-index:9999;
+box-shadow:0 6px 20px rgba(0,0,0,0.2);
+}
+.featured-products{
+padding:80px 60px;
+background:#F7F2EA;
+}
+.featured-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:24px;
+margin-top:40px;
+}
+.featured-card{
+background:white;
+padding:20px;
+border-radius:8px;
+}
+.featured-card img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:6px;
+}
+.trust-bar{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+justify-content:center;
+padding:24px;
+background:#1C1B2E;
+color:white;
+font-size:14px;
+}
+
+</style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">Zafran<span>House</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">Our Story</a></li>
+      <li><a href="#collections">Collections</a></li>
+      <li><a href="#process">Craft</a></li>
+      <li><a href="#contact">Export Enquiry</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Request Catalogue</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" style="padding:0;">
+    <div class="hero-left">
+      <p class="hero-eyebrow">Est. in the weaving districts of India</p>
+      <h1 class="hero-heading display">
+        Where every thread<br>
+        carries a<br>
+        <em>centuries-old</em><br>
+        story
+      </h1>
+      <p class="hero-sub">
+        We export handcrafted Indian rugs — from Kashmiri silk to Rajasthani dhurries — to homes and interior studios across the world. Each piece is selected by hand, woven to last.
+      </p>
+      <div class="hero-actions">
+        <a href="#collections" class="btn-primary">View Collections</a>
+        <a href="#contact" class="btn-ghost">Export Enquiry →</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-carousel" id="heroCarousel">
+        <div class="hero-carousel-track">
+          <div class="hero-slide active">
+            <img src="rugs-hero-1.png" alt="Handcrafted Indian rug — floral medallion design" />
+          </div>
+          <div class="hero-slide">
+            <img src="rugs-hero-2.jpeg" alt="Handcrafted Indian rug — traditional weave" />
+          </div>
+        </div>
+        <div class="hero-carousel-overlay"></div>
+        <p class="hero-caption">Featured Rug Collection</p>
+        <div class="hero-carousel-nav">
+          <button class="hero-carousel-btn" type="button" id="heroPrev" aria-label="Previous image">‹</button>
+          <div class="hero-carousel-dots" id="heroDots">
+            <button class="hero-carousel-dot active" type="button" aria-label="Show image 1" data-index="0"></button>
+            <button class="hero-carousel-dot" type="button" aria-label="Show image 2" data-index="1"></button>
+          </div>
+          <button class="hero-carousel-btn" type="button" id="heroNext" aria-label="Next image">›</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-number display">200+</div>
+      <div class="stat-label">Designs in catalogue</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number display">18</div>
+      <div class="stat-label">Countries exported to</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number display">40+</div>
+      <div class="stat-label">Master weavers on roster</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number display">100%</div>
+      <div class="stat-label">Natural dyes &amp; fibres</div>
+    </div>
+  </div>
+
+  
+<div class="trust-bar">
+<div>✓ Export From India</div>
+<div>✓ Worldwide Shipping</div>
+<div>✓ Custom Manufacturing</div>
+<div>✓ OEM Available</div>
+<div>✓ Low MOQ</div>
+<div>✓ WhatsApp Support</div>
+</div>
+
+<section class="featured-products">
+<p class="section-eyebrow">Featured Products</p>
+<h2 class="section-heading display">Popular Rugs For Export</h2>
+<div class="featured-grid">
+<div class="featured-card">
+<img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800" alt="Rug">
+<h3>Hand Knotted Wool Rug</h3>
+<p>Premium export quality.</p>
+</div>
+<div class="featured-card">
+<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800" alt="Rug">
+<h3>Modern Designer Rug</h3>
+<p>Contemporary patterns.</p>
+</div>
+<div class="featured-card">
+<img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800" alt="Rug">
+<h3>Kashmiri Silk Rug</h3>
+<p>Luxury handcrafted collection.</p>
+</div>
+</div>
+</section>
+
+<!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-left">
+      <div class="about-img-box">
+        <div class="about-img-pattern">
+          <!-- Loom SVG illustration -->
+          <svg viewBox="0 0 260 320" width="180" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Warp threads -->
+            <line x1="50" y1="20" x2="50" y2="300" stroke="#C9A84C" stroke-width="0.7" opacity="0.4"/>
+            <line x1="70" y1="20" x2="70" y2="300" stroke="#C4836A" stroke-width="0.7" opacity="0.35"/>
+            <line x1="90" y1="20" x2="90" y2="300" stroke="#C9A84C" stroke-width="0.7" opacity="0.4"/>
+            <line x1="110" y1="20" x2="110" y2="300" stroke="#C4836A" stroke-width="0.7" opacity="0.35"/>
+            <line x1="130" y1="20" x2="130" y2="300" stroke="#C9A84C" stroke-width="0.7" opacity="0.4"/>
+            <line x1="150" y1="20" x2="150" y2="300" stroke="#C4836A" stroke-width="0.7" opacity="0.35"/>
+            <line x1="170" y1="20" x2="170" y2="300" stroke="#C9A84C" stroke-width="0.7" opacity="0.4"/>
+            <line x1="190" y1="20" x2="190" y2="300" stroke="#C4836A" stroke-width="0.7" opacity="0.35"/>
+            <line x1="210" y1="20" x2="210" y2="300" stroke="#C9A84C" stroke-width="0.7" opacity="0.4"/>
+            <!-- Woven portion -->
+            <rect x="44" y="140" width="172" height="140" fill="none"/>
+            <!-- Weft rows — the woven rug area -->
+            <line x1="44" y1="150" x2="216" y2="150" stroke="#8A7E72" stroke-width="3.5" opacity="0.25"/>
+            <line x1="44" y1="162" x2="216" y2="162" stroke="#C9A84C" stroke-width="3.5" opacity="0.28"/>
+            <line x1="44" y1="174" x2="216" y2="174" stroke="#8A7E72" stroke-width="3.5" opacity="0.22"/>
+            <line x1="44" y1="186" x2="216" y2="186" stroke="#C4836A" stroke-width="3.5" opacity="0.28"/>
+            <line x1="44" y1="198" x2="216" y2="198" stroke="#8A7E72" stroke-width="3.5" opacity="0.22"/>
+            <line x1="44" y1="210" x2="216" y2="210" stroke="#C9A84C" stroke-width="3.5" opacity="0.28"/>
+            <line x1="44" y1="222" x2="216" y2="222" stroke="#8A7E72" stroke-width="3.5" opacity="0.22"/>
+            <line x1="44" y1="234" x2="216" y2="234" stroke="#C4836A" stroke-width="3.5" opacity="0.28"/>
+            <line x1="44" y1="246" x2="216" y2="246" stroke="#8A7E72" stroke-width="3.5" opacity="0.22"/>
+            <line x1="44" y1="258" x2="216" y2="258" stroke="#C9A84C" stroke-width="3.5" opacity="0.28"/>
+            <!-- Loom frame -->
+            <rect x="30" y="10" width="200" height="20" rx="2" fill="#1C1B2E" opacity="0.12"/>
+            <rect x="30" y="290" width="200" height="20" rx="2" fill="#1C1B2E" opacity="0.12"/>
+            <rect x="30" y="10" width="10" height="300" rx="2" fill="#1C1B2E" opacity="0.12"/>
+            <rect x="220" y="10" width="10" height="300" rx="2" fill="#1C1B2E" opacity="0.12"/>
+            <!-- Heddle bar -->
+            <rect x="30" y="128" width="200" height="6" rx="1" fill="#C9A84C" opacity="0.3"/>
+          </svg>
+        </div>
+        <div class="accent-block"></div>
+      </div>
+    </div>
+    <div class="about-right">
+      <p class="section-eyebrow">Our Story</p>
+      <h2 class="section-heading display">Rooted in craft.<br>Built for the world.</h2>
+      <div class="about-divider"></div>
+      <p class="section-body" style="margin-bottom:20px;">
+        Zafran House was founded on a single conviction: that the finest Indian rugs — woven in workshops passed down through generations — deserve a global audience that truly understands their worth.
+      </p>
+      <p class="section-body" style="margin-bottom:20px;">
+        We work directly with weaving communities across Jaipur, Mirzapur, Bhadohi, and Kashmir. Every rug in our catalogue is sourced firsthand, quality-checked under natural light, and documented with full provenance — the region, the weave technique, the dye source.
+      </p>
+      <p class="section-body">
+        For importers, interior designers, and boutique retailers seeking something genuine — not factory-produced, not algorithmically curated — Zafran House is where the search ends.
+      </p>
+      <div style="margin-top: 48px; display:flex; gap: 48px;">
+        <div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:300;color:var(--rose);">15+</div>
+          <div style="font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--stone);">Years sourcing</div>
+        </div>
+        <div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:300;color:var(--rose);">6</div>
+          <div style="font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--stone);">Weaving regions</div>
+        </div>
+        <div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:300;color:var(--rose);">500+</div>
+          <div style="font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--stone);">Export orders</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLECTIONS -->
+  <section class="collections" id="collections" style="padding-left:60px;padding-right:60px;">
+    <div class="collections-header">
+      <div>
+        <p class="section-eyebrow">What we carry</p>
+        <h2 class="section-heading display" style="margin-bottom:0;">Our Collections</h2>
+      </div>
+      <a href="#contact" class="btn-ghost">Request full catalogue →</a>
+    </div>
+    <div class="collections-grid">
+      <div class="col-card">
+        <div class="col-card-img">
+          <div class="col-pattern col-pattern-1">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+              <path d="M40 8 L48 36 L76 40 L48 44 L40 72 L32 44 L4 40 L32 36 Z" stroke="#C9A84C" stroke-width="1" fill="none" opacity="0.6"/>
+              <circle cx="40" cy="40" r="10" stroke="#C9A84C" stroke-width="0.8" fill="none" opacity="0.5"/>
+            </svg>
+          </div>
+        </div>
+        <div class="col-card-info">
+          <div class="col-card-origin">Kashmir, India</div>
+          <div class="col-card-name display">Silk Hand-Knotted</div>
+          <div class="col-card-desc">Ultra-fine weave, 400–800 knots per sq. inch. Floral and medallion patterns in lustrous natural silk.</div>
+        </div>
+      </div>
+      <div class="col-card">
+        <div class="col-card-img">
+          <div class="col-pattern col-pattern-2">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+              <rect x="16" y="16" width="48" height="48" stroke="#C4836A" stroke-width="1" fill="none" opacity="0.6" transform="rotate(12 40 40)"/>
+              <rect x="24" y="24" width="32" height="32" stroke="#C9A84C" stroke-width="0.8" fill="none" opacity="0.5" transform="rotate(12 40 40)"/>
+              <circle cx="40" cy="40" r="5" fill="#C4836A" opacity="0.4"/>
+            </svg>
+          </div>
+        </div>
+        <div class="col-card-info">
+          <div class="col-card-origin">Jaipur, Rajasthan</div>
+          <div class="col-card-name display">Flat-Weave Dhurries</div>
+          <div class="col-card-desc">Reversible cotton dhurries in geometric and kilim patterns. Bold colour, light weight, perfect for modern interiors.</div>
+        </div>
+      </div>
+      <div class="col-card">
+        <div class="col-card-img">
+          <div class="col-pattern col-pattern-3">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+              <polygon points="40,6 74,22 74,58 40,74 6,58 6,22" stroke="#C9A84C" stroke-width="1" fill="none" opacity="0.6"/>
+              <polygon points="40,18 62,28 62,52 40,62 18,52 18,28" stroke="#C4836A" stroke-width="0.8" fill="none" opacity="0.5"/>
+              <circle cx="40" cy="40" r="8" stroke="#C9A84C" stroke-width="0.8" fill="none" opacity="0.4"/>
+            </svg>
+          </div>
+        </div>
+        <div class="col-card-info">
+          <div class="col-card-origin">Bhadohi / Mirzapur, UP</div>
+          <div class="col-card-name display">Tufted Wool Pile</div>
+          <div class="col-card-desc">Machine-tufted with hand-finishing. Plush wool pile, custom sizes available. Ideal for high-volume contract orders.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Additional collection row -->
+    <div class="collections-grid" style="margin-top:2px;">
+      <div class="col-card">
+        <div class="col-card-img">
+          <div class="col-pattern" style="background: repeating-linear-gradient(0deg, rgba(28,27,46,0.06) 0, rgba(28,27,46,0.06) 1px, transparent 1px, transparent 20px), #BFB0A0;">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+              <line x1="40" y1="8" x2="40" y2="72" stroke="#8A7E72" stroke-width="0.8" opacity="0.6"/>
+              <line x1="8" y1="40" x2="72" y2="40" stroke="#8A7E72" stroke-width="0.8" opacity="0.6"/>
+              <line x1="16" y1="16" x2="64" y2="64" stroke="#C9A84C" stroke-width="0.8" opacity="0.5"/>
+              <line x1="64" y1="16" x2="16" y2="64" stroke="#C9A84C" stroke-width="0.8" opacity="0.5"/>
+              <circle cx="40" cy="40" r="14" stroke="#C4836A" stroke-width="0.8" fill="none" opacity="0.5"/>
+            </svg>
+          </div>
+        </div>
+        <div class="col-card-info">
+          <div class="col-card-origin">Agra, Uttar Pradesh</div>
+          <div class="col-card-name display">Mughal Wool-Silk Blend</div>
+          <div class="col-card-desc">Inspired by Mughal court designs. Wool foundation with silk highlights, vegetable-dyed in muted palace tones.</div>
+        </div>
+      </div>
+      <div class="col-card">
+        <div class="col-card-img">
+          <div class="col-pattern" style="background: repeating-linear-gradient(135deg, rgba(196,131,106,0.1) 0, rgba(196,131,106,0.1) 1px, transparent 1px, transparent 14px), #C2B5A5;">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+              <path d="M40 10 C55 10 70 25 70 40 C70 55 55 70 40 70 C25 70 10 55 10 40 C10 25 25 10 40 10Z" stroke="#C4836A" stroke-width="0.8" fill="none" opacity="0.5"/>
+              <path d="M40 20 C50 20 60 30 60 40 C60 50 50 60 40 60 C30 60 20 50 20 40 C20 30 30 20 40 20Z" stroke="#C9A84C" stroke-width="0.8" fill="none" opacity="0.6"/>
+              <path d="M28 28 Q40 18 52 28 Q62 40 52 52 Q40 62 28 52 Q18 40 28 28Z" stroke="#8A7E72" stroke-width="0.7" fill="none" opacity="0.4"/>
+            </svg>
+          </div>
+        </div>
+        <div class="col-card-info">
+          <div class="col-card-origin">Bikaner, Rajasthan</div>
+          <div class="col-card-name display">Camel Hair &amp; Jute</div>
+          <div class="col-card-desc">Naturally textured rugs in undyed camel hair or jute. Earthy, sustainable, and deeply characterful.</div>
+        </div>
+      </div>
+      <div class="col-card">
+        <div class="col-card-img">
+          <div class="col-pattern" style="background: repeating-linear-gradient(45deg, rgba(201,168,76,0.12) 0, rgba(201,168,76,0.12) 1px, transparent 1px, transparent 10px), #D8CFC3;">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+              <path d="M10 40 L40 10 L70 40 L40 70 Z" stroke="#C9A84C" stroke-width="1" fill="none" opacity="0.5"/>
+              <path d="M22 40 L40 22 L58 40 L40 58 Z" stroke="#C4836A" stroke-width="0.9" fill="none" opacity="0.6"/>
+              <circle cx="40" cy="40" r="7" stroke="#C9A84C" stroke-width="1" fill="rgba(201,168,76,0.15)"/>
+            </svg>
+          </div>
+        </div>
+        <div class="col-card-info">
+          <div class="col-card-origin">Warangal, Telangana</div>
+          <div class="col-card-name display">Handloom Silk Cotton</div>
+          <div class="col-card-desc">Fine handloom weaves in mixed silk-cotton. Subtle sheen, contemporary palettes with traditional motifs.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process" id="process">
+    <div class="process-left">
+      <p class="section-eyebrow">The making</p>
+      <h2 class="section-heading display">Craft you can<br>trace to its source</h2>
+      <p class="section-body">
+        We believe buyers deserve to know exactly how a rug was made. Each piece in our export catalogue comes with full documentation — from fibre origin to finishing method.
+      </p>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-num display">i.</div>
+          <div>
+            <div class="step-title display">Sourcing from weavers</div>
+            <div class="step-body">We visit workshops directly, working with families who have practised their craft for three or four generations. No middlemen, no wholesale markets.</div>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-num display">ii.</div>
+          <div>
+            <div class="step-title display">Natural dyeing</div>
+            <div class="step-body">Most of our collection uses vegetable dyes — pomegranate rind, indigo, madder root, turmeric. Colours that deepen, not fade, over decades.</div>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-num display">iii.</div>
+          <div>
+            <div class="step-title display">Hand-finishing &amp; QC</div>
+            <div class="step-body">Every rug is inspected under natural light for knot density, colour fastness, pile evenness, and dimensional accuracy before it is cleared for export.</div>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-num display">iv.</div>
+          <div>
+            <div class="step-title display">Export documentation</div>
+            <div class="step-body">We handle GST invoicing, DGFT export licensing, and all customs paperwork. Sea or air freight, door-to-port or CIF — your preference.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="process-right">
+      <div class="process-visual">
+        <!-- Detailed weave cross-section SVG -->
+        <svg viewBox="0 0 300 300" width="300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Grid of knots suggestion -->
+          <rect width="300" height="300" fill="#EDE6D8"/>
+          <!-- Warp threads background -->
+          <line x1="30" y1="0" x2="30" y2="300" stroke="#C9A84C" stroke-width="0.6" opacity="0.3"/>
+          <line x1="60" y1="0" x2="60" y2="300" stroke="#C9A84C" stroke-width="0.6" opacity="0.3"/>
+          <line x1="90" y1="0" x2="90" y2="300" stroke="#C9A84C" stroke-width="0.6" opacity="0.3"/>
+          <line x1="120" y1="0" x2="120" y2="300" stroke="#C9A84C" stroke-width="0.6" opacity="0.3"/>
+          <line x1="150" y1="0" x2="150" y2="300" stroke="#C9A84C" stroke-width="0.6" opacity="0.3"/>
+          <line x1="180" y1="0" x2="180" y2="300" stroke="#C9A84C" stroke-width="0.6" opacity="0.3"/>
+          <line x1="210" y1="0" x2="210" y2="300" stroke="#C9A84C" stroke-width="0.6" opacity="0.3"/>
+          <line x1="240" y1="0" x2="240" y2="300" stroke="#C9A84C" stroke-width="0.6" opacity="0.3"/>
+          <line x1="270" y1="0" x2="270" y2="300" stroke="#C9A84C" stroke-width="0.6" opacity="0.3"/>
+          <!-- Diamond pattern in the centre -->
+          <g opacity="0.7">
+            <path d="M150 70 L200 120 L150 170 L100 120 Z" fill="none" stroke="#C4836A" stroke-width="1.4"/>
+            <path d="M150 90 L180 120 L150 150 L120 120 Z" fill="rgba(201,168,76,0.12)" stroke="#C9A84C" stroke-width="1"/>
+            <circle cx="150" cy="120" r="12" fill="rgba(196,131,106,0.25)" stroke="#C4836A" stroke-width="1"/>
+            <circle cx="150" cy="120" r="4" fill="#C9A84C" opacity="0.6"/>
+            <!-- Petal forms around centre -->
+            <path d="M150 90 Q160 105 150 120 Q140 105 150 90Z" fill="#C4836A" opacity="0.2"/>
+            <path d="M150 150 Q160 135 150 120 Q140 135 150 150Z" fill="#C4836A" opacity="0.2"/>
+            <path d="M120 120 Q135 110 150 120 Q135 130 120 120Z" fill="#C4836A" opacity="0.2"/>
+            <path d="M180 120 Q165 110 150 120 Q165 130 180 120Z" fill="#C4836A" opacity="0.2"/>
+          </g>
+          <!-- Border row top/bottom -->
+          <rect x="0" y="0" width="300" height="24" fill="rgba(201,168,76,0.08)"/>
+          <rect x="0" y="276" width="300" height="24" fill="rgba(201,168,76,0.08)"/>
+          <line x1="0" y1="24" x2="300" y2="24" stroke="#C9A84C" stroke-width="0.8" opacity="0.3"/>
+          <line x1="0" y1="276" x2="300" y2="276" stroke="#C9A84C" stroke-width="0.8" opacity="0.3"/>
+          <!-- Border row sides -->
+          <rect x="0" y="0" width="24" height="300" fill="rgba(201,168,76,0.08)"/>
+          <rect x="276" y="0" width="24" height="300" fill="rgba(201,168,76,0.08)"/>
+          <!-- Corner diamonds in border -->
+          <path d="M12 12 L20 20 L12 28 L4 20 Z" fill="#C9A84C" opacity="0.4"/>
+          <path d="M288 12 L296 20 L288 28 L280 20 Z" fill="#C9A84C" opacity="0.4"/>
+          <path d="M12 272 L20 280 L12 288 L4 280 Z" fill="#C9A84C" opacity="0.4"/>
+          <path d="M288 272 L296 280 L288 288 L280 280 Z" fill="#C9A84C" opacity="0.4"/>
+        </svg>
+      </div>
+      <div class="process-quote">
+        <p class="pq-text display">"A rug is the one thing in a room that holds the story of hands that never met yours."</p>
+        <div class="pq-author">— From the weaving districts of Bhadohi</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="why" id="why">
+    <p class="section-eyebrow" style="text-align:center;">Why Zafran House</p>
+    <h2 class="section-heading display" style="text-align:center;">What sets our<br>export service apart</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <svg class="why-icon" viewBox="0 0 36 36" fill="none">
+          <path d="M18 4L22 14H33L24 20L27 31L18 25L9 31L12 20L3 14H14Z" stroke="#C9A84C" stroke-width="1.2" fill="none"/>
+        </svg>
+        <div class="why-title display">Provenance-guaranteed</div>
+        <div class="why-body">Every rug ships with a document stating the weaving village, technique, fibre type, dye method, and approximate age. No ambiguity.</div>
+      </div>
+      <div class="why-card">
+        <svg class="why-icon" viewBox="0 0 36 36" fill="none">
+          <rect x="4" y="8" width="28" height="20" rx="1" stroke="#C9A84C" stroke-width="1.2" fill="none"/>
+          <path d="M4 14H32" stroke="#C9A84C" stroke-width="1.2"/>
+          <circle cx="9" cy="20" r="2" stroke="#C9A84C" stroke-width="1" fill="none"/>
+        </svg>
+        <div class="why-title display">No MOQ for first orders</div>
+        <div class="why-body">We welcome single-piece trial orders. Build trust before you scale. We know the best business relationships start with honest small steps.</div>
+      </div>
+      <div class="why-card">
+        <svg class="why-icon" viewBox="0 0 36 36" fill="none">
+          <circle cx="18" cy="18" r="12" stroke="#C9A84C" stroke-width="1.2" fill="none"/>
+          <path d="M12 18L16 22L24 14" stroke="#C9A84C" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+        <div class="why-title display">Customs cleared in India</div>
+        <div class="why-body">We handle all Indian export formalities — GST refund, DGFT registration, shipping bills — so you receive your cargo at destination, hassle-free.</div>
+      </div>
+      <div class="why-card">
+        <svg class="why-icon" viewBox="0 0 36 36" fill="none">
+          <path d="M6 18C6 11.4 11.4 6 18 6C24.6 6 30 11.4 30 18" stroke="#C9A84C" stroke-width="1.2" fill="none"/>
+          <path d="M6 18C6 24.6 11.4 30 18 30C24.6 30 30 24.6 30 18" stroke="#C9A84C" stroke-width="1.2" fill="none" stroke-dasharray="3 2"/>
+          <line x1="18" y1="6" x2="18" y2="30" stroke="#C9A84C" stroke-width="0.8" opacity="0.4"/>
+          <ellipse cx="18" cy="18" rx="6" ry="12" stroke="#C9A84C" stroke-width="0.8" fill="none" opacity="0.4"/>
+        </svg>
+        <div class="why-title display">Custom &amp; OEM orders</div>
+        <div class="why-body">Need a specific size, colour, or pattern for your brand? We work with our weaver network to produce to specification with a 90-day lead time.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <p class="section-eyebrow">What buyers say</p>
+    <h2 class="section-heading display">Trusted by<br>retailers worldwide</h2>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <p class="testi-quote display">"The documentation that came with our first shipment was unlike anything we'd seen. We knew exactly what we were selling, and so did our customers."</p>
+        <div class="testi-name">Martina Höfler</div>
+        <div class="testi-loc">Home Textiles Buyer — Munich, Germany</div>
+      </div>
+      <div class="testi-card">
+        <p class="testi-quote display">"We ordered two pieces as a trial. The quality and the communication were so impressive that we placed a 40-piece order within the month."</p>
+        <div class="testi-name">James Walcott</div>
+        <div class="testi-loc">Interior Design Studio — London, UK</div>
+      </div>
+      <div class="testi-card">
+        <p class="testi-quote display">"Zafran House filled a gap we had been trying to fill for two years — a reliable Indian source with genuinely handcrafted pieces and no minimums."</p>
+        <div class="testi-name">Sofia Lindqvist</div>
+        <div class="testi-loc">Boutique Importer — Stockholm, Sweden</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact" style="padding:0;">
+    <div class="contact-left">
+      <p class="section-eyebrow">Get in touch</p>
+      <h2 class="section-heading display">Start your<br>export enquiry</h2>
+      <p class="section-body" style="max-width:360px;">
+        Whether you're a first-time importer or an established wholesaler, we respond to every enquiry within 24 hours with a tailored catalogue recommendation.
+      </p>
+      <div class="contact-details">
+        <div>
+          <div class="contact-item-label">Email</div>
+          <div class="contact-item-value display">exports@zafranhouse.com</div>
+        </div>
+        <div>
+          <div class="contact-item-label">WhatsApp / Phone</div>
+          <div class="contact-item-value display">+91 98XXX XXXXX</div>
+        </div>
+        <div>
+          <div class="contact-item-label">Location</div>
+          <div class="contact-item-value display">Jaipur, Rajasthan, India</div>
+        </div>
+        <div>
+          <div class="contact-item-label">Export markets</div>
+          <div class="contact-item-value display">Worldwide — sea &amp; air freight</div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-right">
+      <p class="section-eyebrow">Request catalogue</p>
+      <h2 class="section-heading display" style="color:var(--ivory);">Tell us what<br>you're looking for</h2>
+      <div class="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your name</label>
+            <input type="text" placeholder="Full name" />
+          </div>
+          <div class="form-group">
+            <label>Company / Studio</label>
+            <input type="text" placeholder="Business name" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Email address</label>
+            <input type="email" placeholder="your@email.com" />
+          </div>
+          <div class="form-group">
+            <label>Country</label>
+            <input type="text" placeholder="Destination country" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Category of interest</label>
+          <select>
+            <option value="">Select a collection…</option>
+            <option>Silk Hand-Knotted (Kashmir)</option>
+            <option>Flat-Weave Dhurries (Jaipur)</option>
+            <option>Tufted Wool Pile (Bhadohi)</option>
+            <option>Mughal Wool-Silk Blend (Agra)</option>
+            <option>Camel Hair &amp; Jute (Bikaner)</option>
+            <option>Custom / OEM Order</option>
+            <option>Mixed — send full catalogue</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Your message</label>
+          <textarea placeholder="Approximate quantities, sizes, price range, timeline — anything that helps us prepare a relevant catalogue…"></textarea>
+        </div>
+        <button class="btn-submit">Send Enquiry</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name">Zafran<span>House</span></div>
+        <p class="footer-brand-desc">
+          Indian handcrafted rugs for the global market. Sourced from weaving communities, exported with transparency.
+        </p>
+      </div>
+      <div>
+        <div class="footer-col-title">Collections</div>
+        <ul class="footer-links">
+          <li><a href="#collections">Silk Hand-Knotted</a></li>
+          <li><a href="#collections">Flat-Weave Dhurries</a></li>
+          <li><a href="#collections">Wool Pile</a></li>
+          <li><a href="#collections">Camel Hair &amp; Jute</a></li>
+          <li><a href="#collections">Custom Orders</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Company</div>
+        <ul class="footer-links">
+          <li><a href="#about">Our Story</a></li>
+          <li><a href="#process">The Craft</a></li>
+          <li><a href="#why">Why Us</a></li>
+          <li><a href="#contact">Export Enquiry</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Regions we source from</div>
+        <ul class="footer-links">
+          <li><a href="#">Kashmir</a></li>
+          <li><a href="#">Jaipur, Rajasthan</a></li>
+          <li><a href="#">Bhadohi, UP</a></li>
+          <li><a href="#">Agra, UP</a></li>
+          <li><a href="#">Warangal, Telangana</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 Zafran House Exports. All rights reserved.</div>
+      <div class="footer-tagline display">Woven in India. Trusted worldwide.</div>
+    </div>
+  </footer>
+
+
+<a href="https://wa.me/9198XXXXXXXXXX?text=Hello%20I%20am%20interested%20in%20your%20rug%20catalogue" class="whatsapp-float" target="_blank">💬</a>
+
+<script>
+  (function () {
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.hero-carousel-dot');
+    const prevBtn = document.getElementById('heroPrev');
+    const nextBtn = document.getElementById('heroNext');
+    if (!slides.length) return;
+
+    let current = 0;
+    let timer;
+
+    function showSlide(index) {
+      current = (index + slides.length) % slides.length;
+      slides.forEach((slide, i) => slide.classList.toggle('active', i === current));
+      dots.forEach((dot, i) => dot.classList.toggle('active', i === current));
+    }
+
+    function nextSlide() { showSlide(current + 1); }
+    function prevSlide() { showSlide(current - 1); }
+
+    function startAutoplay() {
+      clearInterval(timer);
+      timer = setInterval(nextSlide, 5000);
+    }
+
+    prevBtn.addEventListener('click', () => { prevSlide(); startAutoplay(); });
+    nextBtn.addEventListener('click', () => { nextSlide(); startAutoplay(); });
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        showSlide(Number(dot.dataset.index));
+        startAutoplay();
+      });
+    });
+
+    startAutoplay();
+  })();
+</script>
+</body>
+
+</html>
