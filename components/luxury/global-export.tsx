@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export default function GlobalExport() {
   return (
-    <section className="py-24 md:py-32 bg-background">
+    <section className="pt-10 md:pt-14 pb-24 md:pb-32 bg-background">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         {/* Section Header */}
         <div className="mb-16 md:mb-20">

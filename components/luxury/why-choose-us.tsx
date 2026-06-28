@@ -25,7 +25,7 @@ const reasons = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-24 md:py-32 bg-background">
+    <section className="pt-24 md:pt-32 pb-10 md:pb-12 bg-background">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         {/* Section Header */}
         <div className="mb-20 text-center max-w-3xl mx-auto">
@@ -65,15 +65,15 @@ export default function WhyChooseUs() {
         </div>
 
         {/* Trust Section */}
-        <div className="mt-24 pt-24 border-t border-border">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <p className="font-serif text-4xl font-light text-accent mb-2">GSTIN</p>
-              <p className="text-foreground/60 font-light text-sm">27ABGFB6001M1ZH</p>
+        <div className="mt-14 pt-12 border-t border-border">
+          <div className="max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+            <div className="text-center rounded-lg border border-border/60 bg-card/30 px-6 py-4 flex flex-col justify-center min-h-[96px]">
+              <p className="font-serif text-3xl md:text-4xl font-light text-accent mb-2">GSTIN</p>
+              <p className="text-foreground/60 font-light text-sm break-all">27ABGFB6001M1ZH</p>
             </div>
-            <div>
-              <p className="font-serif text-3xl font-light text-accent mb-2">Merchant Exporter</p>
-              <p className="text-foreground/60 font-light text-sm">& Trader</p>
+            <div className="text-center rounded-lg border border-border/60 bg-card/30 px-6 py-4 flex flex-col justify-center min-h-[96px]">
+              <p className="font-serif text-3xl md:text-4xl font-light text-accent mb-2">Merchant Exporter</p>
+              <p className="text-foreground/60 font-light text-sm">&amp; Trader</p>
             </div>
             {/* <div>
               <p className="font-serif text-4xl font-light text-accent mb-2">45+</p>
