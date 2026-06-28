@@ -14,7 +14,7 @@ export default function Footer() {
               Balaji <span className="text-accent">World Trade</span>
             </div>
             <p className="text-foreground/60 font-light text-sm leading-relaxed mb-4">
-              Premium Indian Rugs, Delivered Worldwide.
+              Handmade Indian Rugs for Export Enquiries.
             </p>
             <p className="text-foreground/60 font-light text-sm leading-relaxed">
               Quality You Expect, Trust You Deserve.

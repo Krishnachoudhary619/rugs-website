@@ -34,8 +34,8 @@ export default function CTASection() {
         {/* Trust indicators */}
         <div className="mt-16 pt-12 border-t border-primary-foreground/20 flex flex-col sm:flex-row justify-center gap-8 text-sm">
           <div>
-            <p className="opacity-75">Fast Response</p>
-            <p className="font-medium">Within 24 Hours</p>
+            <p className="opacity-75">Direct Communication</p>
+            <p className="font-medium">WhatsApp & Email Support</p>
           </div>
           <div>
             <p className="opacity-75">Detailed Information</p>

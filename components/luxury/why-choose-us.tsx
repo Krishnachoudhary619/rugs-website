@@ -75,14 +75,14 @@ export default function WhyChooseUs() {
               <p className="font-serif text-3xl font-light text-accent mb-2">Merchant Exporter</p>
               <p className="text-foreground/60 font-light text-sm">& Trader</p>
             </div>
-            <div>
+            {/* <div>
               <p className="font-serif text-4xl font-light text-accent mb-2">45+</p>
               <p className="text-foreground/60 font-light text-sm">Countries Served</p>
             </div>
             <div>
               <p className="font-serif text-4xl font-light text-accent mb-2">ISO</p>
               <p className="text-foreground/60 font-light text-sm">Quality Certified</p>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

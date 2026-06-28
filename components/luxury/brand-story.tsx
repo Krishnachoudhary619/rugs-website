@@ -7,7 +7,7 @@ export default function BrandStory() {
         {/* Section Title */}
         <div className="mb-16 md:mb-20">
           <h2 className="font-serif text-4xl md:text-5xl font-light text-foreground mb-4">
-            Crafted in India. Trusted Worldwide.
+            Crafted in India. Exported with Care.
           </h2>
           <div className="w-16 h-1 bg-accent" />
         </div>
@@ -28,13 +28,13 @@ export default function BrandStory() {
           <div className="space-y-6">
             <div>
               <h3 className="font-serif text-2xl md:text-3xl font-light text-foreground mb-4">
-                Premium Indian Rugs, Delivered Worldwide
+                Handmade Indian Rugs for Global Buyers
               </h3>
               <p className="text-foreground/70 font-light leading-relaxed text-lg mb-4">
-                Balaji World Trade LLP is a trusted merchant exporter specializing in premium handmade rugs and carpets from India. Founded by Shubham Maurya and Vivek Pal, the company works closely with skilled artisans and trusted manufacturing partners across India's renowned weaving regions to deliver exceptional quality products to international markets.
+                Balaji World Trade LLP is a merchant exporter focused on handmade rugs and carpets from India. Founded by Shubham Maurya and Vivek Pal, the company works with skilled artisans and manufacturing partners across Indian weaving regions to serve international buyers.
               </p>
               <p className="text-foreground/70 font-light leading-relaxed text-lg">
-                From luxury residences and boutique hotels to commercial spaces and retail collections, our rugs combine traditional craftsmanship with global design standards. We focus on quality, transparency, competitive pricing, and long-term partnerships with buyers worldwide.
+                From residences and boutique projects to commercial and retail requirements, our rugs reflect traditional craftsmanship and practical design. We focus on product quality, transparent communication, and dependable export support.
               </p>
             </div>
 
@@ -44,7 +44,7 @@ export default function BrandStory() {
                   Our Mission
                 </h4>
                 <p className="text-foreground/70 font-light leading-relaxed">
-                  To connect international buyers with the finest Indian handmade carpets and rugs while ensuring quality, transparency, and customer satisfaction in every transaction.
+                  To connect international buyers with handmade Indian carpets and rugs through transparent and reliable export communication.
                 </p>
               </div>
 
@@ -53,23 +53,23 @@ export default function BrandStory() {
                   Our Vision
                 </h4>
                 <p className="text-foreground/70 font-light leading-relaxed">
-                  To become a globally recognized and trusted export partner for premium handmade rugs and carpets from India.
+                  To build long-term B2B relationships as a dependable export partner for handmade rugs and carpets from India.
                 </p>
               </div>
             </div>
 
-            <div className="pt-8 flex gap-8">
+            <div className="pt-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
               <div>
-                <p className="font-serif text-3xl text-accent font-light">2000+</p>
-                <p className="text-foreground/60 text-sm">Master Artisans</p>
+                <p className="font-serif text-xl text-accent font-light">Handmade Focus</p>
+                <p className="text-foreground/60 text-sm">Rugs sourced from artisan-led weaving clusters.</p>
               </div>
               <div>
-                <p className="font-serif text-3xl text-accent font-light">45+</p>
-                <p className="text-foreground/60 text-sm">Countries Served</p>
+                <p className="font-serif text-xl text-accent font-light">Export Support</p>
+                <p className="text-foreground/60 text-sm">Documentation and communication for global shipments.</p>
               </div>
               <div>
-                <p className="font-serif text-3xl text-accent font-light">10k+</p>
-                <p className="text-foreground/60 text-sm">Designs Created</p>
+                <p className="font-serif text-xl text-accent font-light">Custom Enquiries</p>
+                <p className="text-foreground/60 text-sm">Sizes, styles, and catalogue requests for B2B buyers.</p>
               </div>
             </div>
           </div>

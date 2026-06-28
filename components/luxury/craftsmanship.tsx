@@ -5,7 +5,7 @@ const steps = [
     number: '01',
     title: 'Material Sourcing',
     description:
-      'We select only the finest natural materials from trusted suppliers across India. Premium silk, wool, and traditional vegetable dyes ensure uncompromising quality.',
+      'We source natural fibers and materials through established supplier and weaving networks across India, based on design and buyer requirements.',
     image: '/images/craft-materials.png',
   },
   {
@@ -19,7 +19,7 @@ const steps = [
     number: '03',
     title: 'Quality Inspection',
     description:
-      'Every rug undergoes rigorous quality checks. Our master craftspeople inspect each piece to ensure flawless execution and durability.',
+      'Each rug is reviewed before dispatch for construction, finishing, and packing readiness.',
     image: '/images/craft-inspection.png',
   },
 ]
@@ -34,7 +34,7 @@ export default function Craftsmanship() {
             The Art of Craftsmanship
           </h2>
           <p className="text-foreground/60 font-light text-lg max-w-3xl">
-            Our rugs are born from meticulous attention to detail. Each step in our process reflects centuries of tradition and an unwavering commitment to excellence.
+            Our process follows a clear sequence from material selection to final inspection, with a focus on consistency and export readiness.
           </p>
         </div>
 
@@ -77,19 +77,19 @@ export default function Craftsmanship() {
           ))}
         </div>
 
-        {/* Bottom Stats */}
+        {/* Bottom Highlights */}
         <div className="mt-24 pt-24 border-t border-border grid grid-cols-1 sm:grid-cols-3 gap-12">
           <div className="text-center">
-            <p className="font-serif text-4xl text-accent font-light mb-2">120-180</p>
-            <p className="text-foreground/60 font-light">Hours per rug</p>
+            <p className="font-serif text-4xl text-accent font-light mb-2">Handmade</p>
+            <p className="text-foreground/60 font-light">Artisan weaving methods</p>
           </div>
           <div className="text-center">
-            <p className="font-serif text-4xl text-accent font-light mb-2">100%</p>
-            <p className="text-foreground/60 font-light">Natural materials</p>
+            <p className="font-serif text-4xl text-accent font-light mb-2">Material-Led</p>
+            <p className="text-foreground/60 font-light">Wool, silk, and blended options</p>
           </div>
           <div className="text-center">
-            <p className="font-serif text-4xl text-accent font-light mb-2">50+</p>
-            <p className="text-foreground/60 font-light">Years durability</p>
+            <p className="font-serif text-4xl text-accent font-light mb-2">Quality Check</p>
+            <p className="text-foreground/60 font-light">Inspection before dispatch</p>
           </div>
         </div>
       </div>
