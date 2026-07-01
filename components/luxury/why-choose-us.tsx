@@ -30,7 +30,7 @@ export default function WhyChooseUs() {
         {/* Section Header */}
         <div className="mb-20 text-center max-w-3xl mx-auto">
           <h2 className="font-serif text-4xl md:text-5xl font-light text-foreground mb-6">
-            Why Global Buyers Choose Balaji World Trade LLP
+            Why Global Buyers Choose Us
           </h2>
           <p className="text-foreground/60 font-light text-lg">
             Quality craftsmanship, transparent partnerships, and reliable service from enquiry to delivery.

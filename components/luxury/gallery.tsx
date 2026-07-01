@@ -59,9 +59,10 @@ export default function Gallery() {
               {/* Image */}
               <Image
                 src={item.image}
-                alt={item.title}
+                alt={`${item.title} handmade rug project in India`}
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
 
               {/* Overlay */}

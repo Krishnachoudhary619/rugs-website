@@ -51,9 +51,10 @@ export default function Craftsmanship() {
               <div className="relative h-80 md:h-96 rounded-lg overflow-hidden">
                 <Image
                   src={step.image}
-                  alt={step.title}
+                  alt={`${step.title} for handmade rugs exporter in India`}
                   fill
                   className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
 

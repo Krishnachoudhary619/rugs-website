@@ -8,54 +8,63 @@ const collections = [
     title: 'Hand Knotted Rugs',
     description: 'Luxury handcrafted rugs created by skilled artisans using traditional weaving techniques.',
     image: '/images/hand-knotted.jpg',
+    alt: 'Premium hand knotted rugs exporter from India',
     href: '#collections',
   },
   {
     title: 'Hand Tufted Rugs',
     description: 'Elegant and durable rugs suitable for residential and commercial projects.',
     image: '/images/hand-tufted.jpg',
+    alt: 'Hand tufted handmade carpets exporter from India',
     href: '#collections',
   },
   {
     title: 'Flatweave Rugs',
     description: 'Contemporary and lightweight designs with versatile styling options.',
     image: '/images/falt-weave.jpg',
+    alt: 'Flatweave rugs supplier for global B2B buyers',
     href: '#collections',
   },
   {
     title: 'Kilim Rugs',
     description: 'Timeless geometric patterns inspired by traditional craftsmanship.',
     image: '/images/kilim-rugs.webp',
+    alt: 'Kilim rugs supplier India for importers and wholesalers',
     href: '#collections',
   },
   {
     title: 'Dhurries',
     description: 'Handwoven Indian classics offering simplicity and durability.',
     image: '/images/dhurrie-rugs.jpg',
+    alt: 'Indian dhurrie rugs manufacturer and exporter',
     href: '#collections',
   },
   {
     title: 'Wool Rugs',
     description: 'Premium wool constructions with exceptional comfort and longevity.',
     image: '/images/wool-rugs.jpg',
+    alt: 'Luxury wool rugs manufactured in India',
     href: '#collections',
   },
   {
     title: 'Jute Rugs',
     description: 'Natural and sustainable rugs designed for modern interiors.',
     image: '/images/jute-rugs.jpg',
+    alt: 'Jute rugs exporter from India for international buyers',
     href: '#collections',
   },
   {
     title: 'Cotton Rugs',
     description: 'Lightweight, practical, and beautifully textured.',
     image: '/images/cotton-rugs.jpg',
+    alt: 'Handmade cotton rugs wholesale supplier India',
     href: '#collections',
   },
   {
     title: 'Shaggy Rugs',
     description: 'Soft, luxurious pile designed for comfort and warmth.',
     image: '/images/shaggy-rugs.jpg',
+    alt: 'Custom handmade shaggy rugs for retail and hospitality',
     href: '#collections',
   },
 ]
@@ -86,9 +95,10 @@ export default function FeaturedCollections() {
                 {/* Background Image */}
                 <Image
                   src={collection.image}
-                  alt={collection.title}
+                  alt={collection.alt}
                   fill
                   className="object-cover transition-all duration-700 group-hover:scale-105 group-hover:brightness-90"
+                  sizes="(max-width: 768px) 100vw, 33vw"
                 />
 
                 {/* Gradient Overlay */}

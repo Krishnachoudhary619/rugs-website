@@ -9,7 +9,7 @@ export default function GlobalExport() {
         {/* Section Header */}
         <div className="mb-16 md:mb-20">
           <h2 className="font-serif text-4xl md:text-5xl font-light text-foreground mb-4">
-            Serving Buyers Across The World
+            Crafted In India. Trusted Worldwide.
           </h2>
           <div className="w-16 h-1 bg-accent" />
         </div>
@@ -73,9 +73,10 @@ export default function GlobalExport() {
           <div className="relative h-96 md:h-[500px] rounded-xl overflow-hidden">
             <Image
               src="/images/craftsmanship-weaving.png"
-              alt="Global rug export and shipping"
+              alt="Custom handmade rugs for hospitality and international projects"
               fill
               className="object-cover"
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
         </div>

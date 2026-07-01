@@ -7,7 +7,7 @@ export default function BrandStory() {
         {/* Section Title */}
         <div className="mb-16 md:mb-20">
           <h2 className="font-serif text-4xl md:text-5xl font-light text-foreground mb-4">
-            Crafted in India. Exported with Care.
+            Premium Indian Rugs Delivered Worldwide
           </h2>
           <div className="w-16 h-1 bg-accent" />
         </div>
@@ -18,9 +18,10 @@ export default function BrandStory() {
           <div className="relative h-96 md:h-[500px] rounded-xl overflow-hidden">
             <Image
               src="/images/brand-story.png"
-              alt="Indian artisan hand-knotting traditional rug"
+              alt="Indian artisan weaving premium handmade carpet for export"
               fill
               className="object-cover"
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
 

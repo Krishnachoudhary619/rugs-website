@@ -10,17 +10,17 @@ import { motion, type Variants } from 'framer-motion'
 const heroImages = [
   {
     src: '/images/royal-rugs1.jpg',
-    alt: 'Premium handcrafted rug in living room',
+    alt: 'Premium hand knotted rugs exporter from India',
     blurDataURL: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8VAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCwAA8A/9k=',
   },
   {
     src: '/images/luxury-rug-hero-2.png',
-    alt: 'Luxury silk rug with botanical motifs',
+    alt: 'Luxury wool rugs manufactured in India',
     blurDataURL: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8VAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCwAA8A/9k=',
   },
   {
     src: '/images/luxury-rug-hero-3.png',
-    alt: 'Premium wool rug in hotel suite',
+    alt: 'Custom handmade rugs for hospitality projects',
     blurDataURL: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8VAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCwAA8A/9k=',
   },
 ]
@@ -113,7 +113,7 @@ export default function Hero() {
             />
             {/* Premium gradient overlay for text readability */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/35 to-black/55" />
-            
+
             {/* Subtle zoom animation on active slide */}
             {index === currentIndex && (
               <motion.div
@@ -141,7 +141,7 @@ export default function Hero() {
               variants={itemVariants}
               className="font-serif text-4xl sm:text-4.5xl md:text-7xl font-light text-balance leading-tight"
             >
-              Premium Handmade Rugs & Carpets From India
+              Luxury Handmade Rugs & Carpets From India
             </motion.h1>
 
             {/* Subheading */}
@@ -229,11 +229,10 @@ export default function Hero() {
             <motion.button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`relative transition-all duration-300 rounded-full overflow-hidden ${
-                index === currentIndex
+              className={`relative transition-all duration-300 rounded-full overflow-hidden ${index === currentIndex
                   ? 'bg-white w-8 h-2'
                   : 'bg-white/40 hover:bg-white/60 w-2 h-2'
-              }`}
+                }`}
               aria-label={`Go to slide ${index + 1}`}
               whileHover={{ scale: 1.2 }}
             >
