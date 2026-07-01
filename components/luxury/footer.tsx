@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react'
+import { Mail, Phone, MapPin, Instagram } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -89,25 +89,28 @@ export default function Footer() {
             {/* Social Links */}
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://wa.me/918104715725"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-background flex items-center justify-center text-foreground/60 hover:text-accent hover:bg-accent/10 transition-colors"
-                aria-label="Facebook"
+                aria-label="WhatsApp"
               >
-                <Facebook className="w-5 h-5" />
+                <Image
+                  src="/images/whatsapp-icon.png"
+                  alt="WhatsApp"
+                  width={20}
+                  height={20}
+                  className="w-5 h-5 object-contain"
+                />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/rugs_balajiworldtradellp?utm_source=qr&igsh=c2gwMTMweTRqMXZ1"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-background flex items-center justify-center text-foreground/60 hover:text-accent hover:bg-accent/10 transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-background flex items-center justify-center text-foreground/60 hover:text-accent hover:bg-accent/10 transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-5 h-5" />
               </a>
             </div>
 
