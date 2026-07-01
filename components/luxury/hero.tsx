@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ChevronLeft, ChevronRight, MessageCircle } from 'lucide-react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { motion, type Variants } from 'framer-motion'
 
@@ -173,7 +173,13 @@ export default function Hero() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <MessageCircle className="w-4 h-4" />
+                  <Image
+                    src="/images/whatsapp-icon.png"
+                    alt="WhatsApp"
+                    width={16}
+                    height={16}
+                    className="w-4 h-4 object-contain"
+                  />
                   WhatsApp Catalogue
                 </a>
               </Button>

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react'
 
 export default function Footer() {
@@ -10,8 +11,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
           <div>
-            <div className="font-serif text-2xl font-light mb-4">
-              Balaji <span className="text-accent">World Trade</span>
+            <div className="mb-4">
+              <Image
+                src="/images/balaji-logo.png"
+                alt="Balaji World Trade LLP logo"
+                width={300}
+                height={300}
+                className="h-28 md:h-32 w-auto object-contain"
+              />
             </div>
             <p className="text-foreground/60 font-light text-sm leading-relaxed mb-4">
               Handmade Indian Rugs for Export Enquiries.

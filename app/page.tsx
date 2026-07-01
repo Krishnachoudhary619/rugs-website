@@ -11,7 +11,7 @@ import Footer from "@/components/luxury/footer"
 
 export default function HomePage() {
   return (
-    <main className="pt-20">
+    <main className="pt-[70px] md:pt-[90px]">
       <Header />
       <Hero />
       <BrandStory />

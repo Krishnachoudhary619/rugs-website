@@ -88,19 +88,31 @@ export default function FeaturedCollections() {
                   src={collection.image}
                   alt={collection.title}
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="object-cover transition-all duration-700 group-hover:scale-105 group-hover:brightness-90"
                 />
 
                 {/* Gradient Overlay */}
-                <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-white via-white/70 to-transparent" />
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    background:
+                      'linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0.45), rgba(0,0,0,0.15), transparent)',
+                  }}
+                />
 
                 {/* Content */}
-                <div className="absolute inset-0 flex flex-col justify-end px-6 pb-4 pt-6 text-foreground">
+                <div className="absolute inset-0 flex flex-col justify-end px-6 pb-4 pt-6 text-white">
                   <div>
-                    <h3 className="font-serif text-3xl font-light mb-2">
+                    <h3
+                      className="font-serif text-3xl font-light mb-2 text-white"
+                      style={{ textShadow: '0 2px 12px rgba(0,0,0,0.5)' }}
+                    >
                       {collection.title}
                     </h3>
-                    <p className="font-light text-sm text-foreground/80">
+                    <p
+                      className="font-light text-sm text-white/90"
+                      style={{ textShadow: '0 2px 12px rgba(0,0,0,0.5)' }}
+                    >
                       {collection.description}
                     </p>
                   </div>
