@@ -22,10 +22,14 @@ const playfairDisplay = Playfair_Display({
 const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
 const bingSiteVerification = process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
 
+const siteUrl = 'https://balajirugs.com'
+const ogImageUrl = `${siteUrl}/og-image.jpg`
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://balajirugs.com'),
-  title: 'Premium Handmade Rugs & Carpets From India | Balaji Rugs',
-  description: 'Balaji Rugs exports premium handmade rugs and carpets from India. Explore hand knotted, wool, jute, kilim, flatweave, and custom rugs worldwide.',
+  metadataBase: new URL(siteUrl),
+  title: 'Balaji World Trade LLP | Premium Handmade Rugs & Carpets From India',
+  description:
+    'Luxury handmade rugs and carpets crafted in India and delivered worldwide. Explore hand knotted, wool, kilim, flatweave, jute, and custom rugs.',
   keywords: [
     'handmade rugs exporter india',
     'handmade carpets exporter india',
@@ -46,28 +50,31 @@ export const metadata: Metadata = {
     'premium handmade rugs and carpets exporter from India',
   ],
   alternates: {
-    canonical: 'https://balajirugs.com',
+    canonical: siteUrl,
   },
   openGraph: {
-    title: 'Premium Handmade Rugs & Carpets From India',
-    description: 'Luxury handmade rugs and carpets crafted in India and delivered worldwide.',
-    url: 'https://balajirugs.com',
+    title: 'Balaji World Trade LLP | Premium Handmade Rugs & Carpets From India',
+    description:
+      'Luxury handmade rugs and carpets crafted in India and delivered worldwide.',
+    url: siteUrl,
+    siteName: 'Balaji World Trade LLP',
+    locale: 'en_US',
     type: 'website',
-    siteName: 'Balaji Rugs',
     images: [
       {
-        url: '/og-image.jpg',
+        url: ogImageUrl,
         width: 1200,
         height: 630,
-        alt: 'Premium handmade rugs and carpets from India by Balaji Rugs',
+        alt: 'Balaji World Trade LLP Premium Handmade Rugs',
+        type: 'image/jpeg',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Premium Handmade Rugs & Carpets From India',
-    description: 'Luxury handmade rugs exported worldwide from India.',
-    images: ['/og-image.jpg'],
+    title: 'Balaji World Trade LLP',
+    description: 'Premium Handmade Rugs & Carpets From India',
+    images: [ogImageUrl],
   },
   verification: {
     google: googleSiteVerification,
